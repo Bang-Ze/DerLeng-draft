@@ -104,12 +104,20 @@
               </svg>
             </button>
 
-            <a
+            <!-- <a
               class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 cursor-pointer bg-primary dark:bg-blue-950 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
               href="html/loginnnn.html"
             >
               <button>ចុះឈ្មោះ</button>
+            </a> -->
+
+            <a
+              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 cursor-pointer bg-primary dark:bg-blue-950 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              href="html/logout.html"
+            >
+              <button>ចាកចេញ</button>
             </a>
+
             <button
               id="dropdownDelayButton"
               data-dropdown-toggle="dropdownDelay"
@@ -581,6 +589,20 @@
         </div>
       </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const authButton = document.getElementById("authButton");
+        const user = JSON.parse(localStorage.getItem("userData"));
+
+        if (user) {
+          authButton.textContent = "ចាកចេញ";
+          authButton.href = "html/logout.html";
+        } else {
+          authButton.textContent = "ចុះឈ្មោះ";
+          authButton.href = "html/loginnnn.html";
+        }
+      });
+    </script>
     <script src="js/theme.js"></script>
     <script
       type="module"

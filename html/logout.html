@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logout</title>
+  <link rel="stylesheet" href="../src/output.css" />
+  <!-- icon -->
+    <link rel="shortcut icon" href="../img/home/icon.png" type="image/x-icon" />
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+  <div class="text-center">
+    <h1 class="text-2xl font-bold mb-4">កំពុងចេញពីគណនី...</h1>
+    <p class="text-gray-600">សូមរង់ចាំបន្តិច</p>
+  </div>
+
+  <script>
+    // Clear session (localStorage or sessionStorage)
+    localStorage.removeItem("loggedInUser");
+    sessionStorage.clear();
+
+    // Redirect back to home page after 1.5 seconds
+    setTimeout(() => {
+      window.location.href = "../html/loginnnn.html";
+    }, 1500);
+  </script>
+</body>
+</html>

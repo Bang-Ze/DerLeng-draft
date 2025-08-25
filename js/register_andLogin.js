@@ -96,21 +96,35 @@ function setLoading(buttonId, isLoading) {
 }
 
 // ================ In-Memory Storage =======================
-let userData = null;
-let isLoggedIn = false;
+
+// let userData = null;
+// let isLoggedIn = false;
+
+// function saveUserData(data) {
+//   userData = data;
+//   isLoggedIn = true;
+// }
+
+// function getUserData() {
+//   return userData;
+// }
+
+// function clearUserData() {
+//   userData = null;
+//   isLoggedIn = false;
+// }
 
 function saveUserData(data) {
-  userData = data;
-  isLoggedIn = true;
+  localStorage.setItem("userData", JSON.stringify(data));
 }
 
 function getUserData() {
-  return userData;
+  const stored = localStorage.getItem("userData");
+  return stored ? JSON.parse(stored) : null;
 }
 
 function clearUserData() {
-  userData = null;
-  isLoggedIn = false;
+  localStorage.removeItem("userData");
 }
 
 // ================ API Functions =======================
